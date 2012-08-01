@@ -5,7 +5,7 @@
 # Please note that the package source code is licensed under its own license.
 
 project ( luazip C )
-cmake_minimum_required ( VERSION 2.6 )
+cmake_minimum_required ( VERSION 2.8 )
 include ( cmake/dist.cmake )
 include ( lua )
 
@@ -19,8 +19,7 @@ include_directories ( ${ZZIPLIB_INCLUDE_DIRS} )
 
 include_directories ( src )
 
-install_lua_module ( zip src/luazip.c src/luazip.def
-  LINK ${ZZIPLIB_LIBRARIES} ${ZLIB_LIBRARIES} )
+install_lua_module ( zip src/luazip.c src/luazip.def LINK ${ZZIPLIB_LIBRARIES} ${ZLIB_LIBRARIES} )
 
 add_lua_test ( tests/test_zip.lua WORKING_DIRECTORY tests )
 
